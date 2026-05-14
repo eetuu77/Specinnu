@@ -1,1 +1,1 @@
-
+const CHANNEL_ID = "https://discord.com/channels/1500881333348470846/1503792252747518062";
