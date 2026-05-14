@@ -1,1 +1,3 @@
-const CHANNEL_ID = "https://discord.com/channels/1500881333348470846/1503792252747518062";
+const CHANNEL_ID = "1503792252747518062";
+
+if (message.channel.id !== CHANNEL_ID) return;
