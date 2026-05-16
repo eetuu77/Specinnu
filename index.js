@@ -1,10 +1,6 @@
-```javascript
 require('dotenv').config();
 
-const {
-  Client,
-  GatewayIntentBits
-} = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 
 const client = new Client({
   intents: [
@@ -16,9 +12,7 @@ const client = new Client({
 });
 
 const TOKEN = process.env.TOKEN;
-
 const SERVER_ID = "1500881333348470846";
-
 const CHANNEL_ID = "1503792252747518062";
 
 const insults = [
@@ -41,7 +35,6 @@ const randomReplies = [
 ];
 
 const userMessages = new Map();
-
 let joins = [];
 
 client.once('ready', () => {
@@ -87,7 +80,9 @@ client.on('messageCreate', async (message) => {
     try {
       await message.member.timeout(5 * 60 * 60 * 1000, 'Spam detected by Specinnu');
       await message.channel.send(`🕊️ ${message.author} spämmäsi liikaa.\nSpecinnu antoi 5h jäähyn.`);
-    } catch (err) { console.log(err); }
+    } catch (err) {
+      console.log(err);
+    }
     return;
   }
 
@@ -99,7 +94,9 @@ client.on('messageCreate', async (message) => {
     try {
       await message.delete();
       await message.channel.send(`${message.author} linkit eivät ole sallittuja 🕊️`);
-    } catch (err) { console.log(err); }
+    } catch (err) {
+      console.log(err);
+    }
     return;
   }
 
@@ -107,7 +104,9 @@ client.on('messageCreate', async (message) => {
     try {
       await message.member.timeout(2 * 60 * 60 * 1000, 'Haukkui Specinnua');
       await message.reply("Specinnu ei pitänyt tuosta 😭\nSait 2h jäähyn.");
-    } catch (err) { console.log(err); }
+    } catch (err) {
+      console.log(err);
+    }
     return;
   }
 
@@ -124,4 +123,3 @@ client.on('messageCreate', async (message) => {
 });
 
 client.login(TOKEN);
-```
